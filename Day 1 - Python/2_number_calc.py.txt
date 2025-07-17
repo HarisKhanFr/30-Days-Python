@@ -1,0 +1,15 @@
+num1 = float(input("Enter your 1st number: \n"))
+num2 = float(input("Enter your 2nd number: \n"))
+
+operator = input("What operation would you like to use? \n"
+                 "Add (A), Subtract (S), Divide (D), Multiply (M) \n")
+if operator == "a":
+    print(f"Result: {round(num1 + num2, 2)}")
+elif operator == "s":
+    print(f"Result: {round(num1 - num2, 2)}")
+elif operator == "d":
+    print(f"Result: {round(num1 / num2, 2)}")
+elif operator == "m":
+    print(f"Result: {round(num1 * num2, 2)}")
+else:
+    print("Please enter a valid number/operator")

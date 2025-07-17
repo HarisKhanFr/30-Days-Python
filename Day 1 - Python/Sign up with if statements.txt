@@ -1,0 +1,8 @@
+age = int(input("How old are you? "))
+
+if age >= 100:
+    print("You're too old unc 🥀💔")
+elif age >= 18:
+    print("You can sign up!")
+else:
+    print("You need to be 18+ to sign up")

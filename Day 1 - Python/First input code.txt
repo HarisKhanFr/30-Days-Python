@@ -1,0 +1,7 @@
+name = input("What is your name: ")
+age = int(input("How old are you: "))
+weight = int(input("How much do you weigh (in kgs): "))
+
+print(f"Hello {name}, welcome to our store!")
+print(f"You are {age} years old")
+print(f"You weigh {weight * 2.20462} pounds")

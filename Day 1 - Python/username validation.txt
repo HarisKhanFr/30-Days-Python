@@ -1,0 +1,6 @@
+username = input("⚬ No spaces\n"
+                 "⚬ No digits\n"
+                 "⚬ 12 characters max\n"
+                 "Enter a username: \n")
+check = username.isalpha()
+print(f"Congrats your username is {username}!" if check and len(username) <=12 else "Invalid username")

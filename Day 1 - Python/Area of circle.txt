@@ -1,0 +1,10 @@
+import math
+
+answer = int(input("Do you have the radius or diameter? Type 1 if radius, 2 if diameter. "))
+if answer ==1:
+    radius = float(input("Enter the radius of the circle: "))
+    print(f"The area of the circle is {math.pi * pow(radius, 2)} cm²")
+else:
+    diameter = float(input("Enter the diameter of the circle: "))
+    diameter /= 2
+    print(f"The circumference of the circle is {math.pi * pow(diameter, 2)} cm²")

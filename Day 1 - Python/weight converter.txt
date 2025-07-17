@@ -1,0 +1,10 @@
+weight = float(input("Enter your weight: \n"))
+fr = input("Pounds (P) or Kilograms (K)\n")
+if fr == "k":
+    weight = round(weight * 2.20462, 2)
+    print(f"You weight is {weight} lbs")
+elif fr == "p":
+    weight = round(weight * 0.453592, 2)
+    print(f"You weight is {weight} kgs")
+else:
+    print("Please enter a valid letter of conversion")
