@@ -1,6 +1,0 @@
-email = input("Enter your email adress: \n")
-while "@" not in email or "." not in email:
-    print("Please enter a valid email")
-    email = input("Enter your email adress: \n")
-print(f"Hello {email}")
-#use or because if either condition is not met = restart
