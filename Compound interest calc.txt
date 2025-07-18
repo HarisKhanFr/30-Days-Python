@@ -1,0 +1,23 @@
+p = float(input("Enter your principal amount: "))
+while p < 0:
+    print("Principal amount cannot be lower than 0.")
+    p = float(input("Enter your principal amount: "))
+
+interest = float(input("Enter your interest rate: "))
+while interest < 0:
+    print("Interest rate cannot be lower than 0.")
+    interest = float(input("Enter your interest rate: "))
+
+t = float(input("Investment duration (in years): "))
+while  t < 0:
+    print("Duration cannot be lower than 0.")
+    t = float(input("Investment duration (in years): "))
+
+n = float(input("How many times per year is it compounded? "))
+while n < 0:
+    print("Frequency cannot be lower than 0.")
+    n = float(input("How many times per year is it compounded? "))
+
+interest = interest/100
+a = p * pow(1 + interest/n, n * t)
+print(f"Your investment will grow to ${a:,.2f} after {t} year/s!")
