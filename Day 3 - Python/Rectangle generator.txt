@@ -1,0 +1,7 @@
+length = int(input("Enter the length: "))
+width = int(input("Enter the width: "))
+for x in range (width):
+    for y in range (length):
+        print("*", end="")
+    print()
+

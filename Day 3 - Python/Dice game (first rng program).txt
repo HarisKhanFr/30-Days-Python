@@ -1,0 +1,9 @@
+info = input("Welcome to the dice game! 🎲 \n"
+             "• Enter R to roll the dice \n"
+             "• Enter Q to quit the game \n")
+rng = {"1", "2", "3", "4", "5", "6"}
+while not info.isalpha():
+    info = input("Invalid letter \n"
+                 "• Enter R to roll the dice \n"
+                 "• Enter Q to quit the game \n")
+print(f"You rolled {rng.pop()}!" if info =="r" else "Bye")
