@@ -1,0 +1,23 @@
+foods = []
+prices = []
+status = True
+
+while status:
+    Fenter = input("Enter an item (Q to quit): ")
+    if not Fenter =="q":
+        foods.append(Fenter)
+    else:
+        for food in foods:
+            Penter = input(f"Enter the price of {food}: $")
+            while not Penter.isdigit():
+                print("Invalid number")
+                Penter = input(f"Enter the price of {Fenter}: ")
+            Penter = float(Penter)
+            prices.append(Penter)
+
+        print('------YOUR CART------')
+        for food in foods:
+            print(food)
+        print(f"\n"
+              f"Your total is ${sum(prices)+0.13*(sum(prices))}")
+        status = False

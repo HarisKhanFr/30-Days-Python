@@ -1,0 +1,47 @@
+questions = ("1. What do cows drink?",
+             "2. Which weighs more: a kilogram of feathers or a kilogram of bricks?",
+             "3. What is the largest ocean on Earth?",
+             "4. How many months have 28 days?",
+             "5. What gas do plants absorb from the atmosphere?")
+
+options = (("A. Water", "B. Milk", "C. Juice", "D. Soda"),
+           ("A. Bricks", "B. Feathers", "C. Both weigh the same"),
+           ("A. Indian", "B. Arctic", "C. Atlantic", "D. Pacific"),
+           ("A. All of them", "B. One", "C. Two", "D. February only"),
+           ("A. Oxygen", "B. Nitrogen", "C. Carbon Dioxide", "D. Helium"))
+
+answers = ("A","C","D","A","C")
+guesses = []
+score = 0
+question_num = 0
+
+for question in questions:
+    print('-----------------------')
+    print(question)
+    print('-----------------------')
+    for option in options[question_num]:
+        print(option)
+    guess = input("Enter A/B/C/D: ").upper()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        print("\n"
+              "CORRECT")
+        score += 1
+    else:
+        print("\n"
+              "INCORRECT")
+        print(f"{answers[question_num]} is the correct answer.")
+    question_num += 1
+print('-----------------------')
+print('        RESULTS')
+print('-----------------------')
+print("Answers: ", end=" ")
+for answer in answers:
+    print(answer, end=" ")
+print()
+print("Guesses: ", end=" ")
+for guess in guesses:
+    print(guess, end=" ")
+print()
+print('-----------------------')
+print(f"Your score is {(score/len(questions)*100):.2f}%")
