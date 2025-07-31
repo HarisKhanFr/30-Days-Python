@@ -1,0 +1,30 @@
+import random
+
+user = "H"
+while user == "H":
+    user = input("Type H to hatch: ").upper()
+    num = random.randint(1, 100)
+    if num <= 40:
+        print('---------------------------\n'
+              'COMMON: you hatched a Mouse\n'
+              '---------------------------')
+    elif num > 40 and num <= 70:
+        print("---------------------------\n"
+              "UNCOMMON: you hatched a Cat\n"
+              "---------------------------")
+    elif num > 70 and num <= 90:
+     print("---------------------------\n"
+           "RARE: you hatched a Monkey\n"
+           "---------------------------")
+    elif num > 90 and num <= 95:
+        print("---------------------------\n"
+              "Epic: you hatched a Bear\n"
+              "---------------------------")
+    elif num > 95 and num <= 99:
+        print("---------------------------\n"
+              "⭐ LEGENDARY: You hatched a Fox!\n"
+              "---------------------------")
+    elif num == 100:
+        print("---------------------------\n"
+              "💫 MYTHIC: You hatched a Raccoon!\n"
+              "---------------------------")

@@ -1,0 +1,34 @@
+import random
+
+stat = True
+low = 1
+guesses = 1
+high = input("Enter the highest number for the guessing game (starts at 1): ")
+while not high.isdigit() or high.find(".") >=0:
+    print("Please enter a valid number")
+    high = input("Enter the highest number for the guessing game (starts at 1): ")
+high = int(high)
+num = random.randint(1, high)
+print(f"--------------------------------\n"
+      f"Guess a number between 1-{high}!\n"
+      f"--------------------------------")
+while stat:
+    user = input("Enter your guess: ")
+    while not user.isdigit() or user.find(".") >= 0:
+        print("Please enter a valid guess")
+        user = input("Enter your guess: ")
+    user = int(user)
+    if user > num:
+        print("Too high! try again!")
+        guesses += 1
+    elif user < num:
+        print("Too low! try again!")
+        guesses += 1
+    elif user < low or user > high:
+        print(f"Invalid guess\n"
+              f"Please guess a number between 1-{high}")
+    elif user == num:
+        print(f"-----------------------------------------------------\n"
+              f"Congrats! You got the number in {guesses} attempt(s)!\n"
+              f"-----------------------------------------------------")
+        stat = False

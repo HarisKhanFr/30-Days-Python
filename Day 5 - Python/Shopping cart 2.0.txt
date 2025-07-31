@@ -1,0 +1,44 @@
+import time
+
+items = {"hotdog": 2,
+         "popcorn": 6,
+         "soda": 3,
+         "water": 1,
+         "giant pretzel": 3.5,
+         "pizza": 10,
+         "nachos": 4.5,
+         "fries": 2.5,
+         "chips": 2}
+total = []
+price = items.values()
+print("-----------MENU-----------")
+time.sleep(0.2)
+for item, price in items.items():
+    time.sleep(0.3)
+    print(f"{item.capitalize():<15}: ${price}")
+time.sleep(0.4)
+print("--------------------------")
+status = True
+cart = ""
+while status:
+    cart = input("Enter an item you would like to buy (Q to quit, M for menu): ")
+    if cart.lower() == "q":
+        print("--------------------------")
+        print(f"Total   : ${sum(total)}\n"
+              f"HST/GST : ${(0.13*(sum(total))):.2f}\n"
+              f"Final   : ${(sum(total)+(0.13*(sum(total)))):.2f}\n"
+              f"--------------------------")
+        status = False
+    elif cart in items:
+        balls = float(items.get(cart))
+        total.append(balls)
+    elif cart.lower() == "m":
+        print("-----------MENU-----------")
+        time.sleep(0.2)
+        for item, price in items.items():
+            time.sleep(0.3)
+            print(f"{item.capitalize():<15}: ${price}")
+        time.sleep(0.4)
+        print("--------------------------")
+    else:
+        print("⚠️ Item not found ⚠️")

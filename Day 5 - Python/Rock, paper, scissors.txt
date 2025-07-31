@@ -1,0 +1,31 @@
+import random
+
+stat = True
+options = ("rock","paper","scissors")
+option = random.choice(options)
+while stat:
+    guess = input("\nEnter rock, paper or scissors: ").lower()
+
+    if guess == "rock":
+        if option == "rock":
+            print(f"----------------\nYou: {guess}\nBot: {option}\nIt's a tie!\n----------------")
+        elif option == "scissors":
+            print(f"----------------\nYou: {guess}\nBot: {option}\nYou win!\n----------------")
+        elif option == "paper":
+            print(f"----------------\nYou: {guess}\n Bot: {option}\nYou loose!\n----------------")
+    if guess == "paper":
+        if option == "rock":
+            print(f"----------------\nYou: {guess}\nBot: {option}\nYou win!\n----------------")
+        elif option == "scissors":
+            print(f"----------------\nYou: {guess}\nBot: {option}\nYou loose!\n----------------")
+        elif option == "paper":
+            print(f"----------------\nYou: {guess}\n Bot: {option}\nIt's a tie!\n----------------")
+    if guess == "scissors":
+        if option == "rock":
+            print(f"----------------\nYou: {guess}\nBot: {option}\nYou loose!\n----------------")
+        elif option == "scissors":
+            print(f"----------------\nYou: {guess}\nBot: {option}\nIt's a tie!\n----------------")
+        elif option == "paper":
+            print(f"----------------\nYou: {guess}\n Bot: {option}\nYou win!\n----------------")
+    if not input("Enter R to play again or Q to quit: ").upper() == "Y":
+        stat = False
