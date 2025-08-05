@@ -1,0 +1,37 @@
+import random
+print('•••••••••••••••••••••••••••\n'
+      '     Welcome to Slots!\n '
+      '     🍌•🍉•🍒•🍇•🍄\n'
+      '•••••••••••••••••••••••••••')
+options = ("🍌", "🍉", "🍒", "🍇", "🍄")
+balance = 100
+stat = True
+while balance > 0 and stat:
+      print(f"\nBalance: ${balance}")
+      bet = float(input('Place your bet amount: $'))
+      while not bet.is_integer():
+            print("Invalid number")
+            bet = float(input('Place your bet amount: $'))
+      print("Spinning... ")
+      spin = (random.choice(options), random.choice(options) , random.choice(options))
+      print(f"\n•••••••••••••••••••••••••••\n"
+            f"       {spin[0]} | {spin[1]} | {spin[2]}\n"
+            f"•••••••••••••••••••••••••••\n")
+      if spin[0] == spin[1] == spin[2]:
+          print('JACKPOTTT!!!!')
+          balance += 2 * bet
+      elif spin[0] == spin[1] or spin[1] == spin[2] or spin[0] == spin[2]:
+          print("Almost there...")
+          balance -= 0.5 * bet
+      else:
+          print("You lost!")
+          balance -= bet
+      play_again = input("Play again? (Y/N): ").upper()
+      while play_again != "Y" and play_again != "N":
+          print("Invalid choice.")
+          play_again = input("Play again? (Y/N): ").upper()
+      if play_again == "Y":
+          pass
+      else:
+          stat = False
+print(f"You left the casino with ${balance}")

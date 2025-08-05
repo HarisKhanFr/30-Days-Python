@@ -1,0 +1,53 @@
+import time
+def show_balace():
+    print("*************************\n"
+     f"Your balance is ${balance:.2f}\n"
+          f"*************************)
+
+def deposit_amnt():
+    deposit = float(input("*************************\n"
+        "Enter the amount to deposit: $").upper())
+    return deposit
+
+def withdraw_amnt():
+    withdraw = float(input("*************************\n"
+        "Enter the amount to withdraw: $").upper())
+    if withdraw > balance:
+        print("*************************\n"
+              "Transaction failed: Insufficient funds\n"
+              "*************************")
+        return 0
+    else:
+        return withdraw
+
+def exit():
+    print("************************************************\n"
+          "Thank you for banking with us. Have a great day!\n"
+          "************************************************")
+
+balance = 0
+stat = True
+while stat:
+    print("*************************\n"
+        "     Banking Program\n"
+        "*************************\n"
+        "1. Show Balance\n"
+        "2. Deposit\n"
+        "3. Withdraw\n"
+        "4. Exit\n"
+        "*************************")
+    user = input("Enter your choice (1-4): ")
+    if user =="1":
+        show_balace()
+        time.sleep(1.25)
+    elif user =="2":
+        balance += deposit_amnt()
+    elif user =="3":
+        balance -= withdraw_amnt()
+    elif user =="4":
+        exit()
+        stat = False
+    else:
+        print("*************************\n"
+        "Please enter a valid choice")
+        time.sleep(1.25)
