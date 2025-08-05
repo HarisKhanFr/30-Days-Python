@@ -1,0 +1,14 @@
+def give_average(*args):
+    total = 0
+    num = 0
+    for arg in args:
+        total += arg
+        num += 1
+    return total/num
+
+print(give_average(90, 100))
+
+#chatgpt version
+#def give_average(*args):
+#    return sum(args) / len(args) if args else 0
+
